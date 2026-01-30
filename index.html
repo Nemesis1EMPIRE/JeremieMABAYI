@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Infographe Développeur</title>
+    <title>Jérémie MABAYI | Cybersécurité & Développement</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #955149;
@@ -16,14 +16,15 @@
             --secondary-dark: #d4dbb0;
             --dark: #1E0F1C;
             --light: #ffffff;
-            --gray: #6c757d;
-            --light-gray: #f8f9fa;
-            --border-gray: #e2e8f0;
+            --gray: #8a8a8a;
+            --light-gray: #f5f5f5;
+            --border-gray: #e0e0e0;
             --transition: all 0.3s ease;
             --shadow: 0 4px 20px rgba(30, 15, 28, 0.1);
             --shadow-hover: 0 10px 40px rgba(30, 15, 28, 0.15);
-            --border-radius: 16px;
+            --border-radius: 12px;
             --section-spacing: 100px;
+            --cyber-gradient: linear-gradient(90deg, var(--primary), var(--secondary));
         }
 
         * {
@@ -44,8 +45,11 @@
             overflow-x: hidden;
         }
 
+        .code-font {
+            font-family: 'Roboto Mono', monospace;
+        }
+
         h1, h2, h3, h4, h5 {
-            font-family: 'Raleway', sans-serif;
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 1rem;
@@ -118,6 +122,17 @@
             box-shadow: 0 8px 25px rgba(149, 81, 73, 0.4);
         }
 
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: rgba(149, 81, 73, 0.1);
+        }
+
         .btn-secondary {
             background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
             color: var(--dark);
@@ -127,6 +142,11 @@
         .btn-secondary:hover {
             background: linear-gradient(90deg, var(--secondary-dark), var(--secondary));
             box-shadow: 0 8px 25px rgba(226, 233, 192, 0.4);
+        }
+
+        .btn-small {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
 
         .section-title {
@@ -165,7 +185,7 @@
         }
 
         .logo {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Roboto Mono', monospace;
             font-size: 2rem;
             font-weight: 800;
             color: var(--primary);
@@ -270,6 +290,23 @@
             color: var(--gray);
         }
 
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            padding: 10px 20px;
+            background: rgba(149, 81, 73, 0.1);
+            border: 1px solid rgba(149, 81, 73, 0.3);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
         .hero-buttons {
             display: flex;
             gap: 20px;
@@ -345,48 +382,35 @@
             margin-bottom: 18px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             font-size: 1.1rem;
         }
 
-        .skill-list li i {
+        .skill-name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-name i {
             font-size: 1.2rem;
-            margin-right: 15px;
             color: var(--primary);
             -webkit-text-fill-color: var(--primary);
             background: none;
         }
 
+        .skill-level {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 600;
+            padding: 5px 12px;
+            background: rgba(149, 81, 73, 0.1);
+            border-radius: 20px;
+        }
+
         /* Portfolio Section */
         .portfolio {
             background-color: var(--light-gray);
-        }
-
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 4rem;
-            gap: 15px;
-        }
-
-        .filter-btn {
-            padding: 12px 28px;
-            background: white;
-            border: 2px solid var(--border-gray);
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 1rem;
-            color: var(--gray);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            color: white;
-            border-color: transparent;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(149, 81, 73, 0.2);
         }
 
         .portfolio-grid {
@@ -410,7 +434,7 @@
         }
 
         .portfolio-img {
-            height: 280px;
+            height: 250px;
             overflow: hidden;
             position: relative;
             cursor: pointer;
@@ -477,6 +501,212 @@
         .portfolio-info p {
             color: var(--gray);
             font-size: 1.05rem;
+        }
+
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .portfolio-tag {
+            padding: 8px 16px;
+            background: rgba(149, 81, 73, 0.1);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Design Graphique Section */
+        .design {
+            background-color: var(--light);
+        }
+
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .design-item {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-gray);
+        }
+
+        .design-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .design-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .design-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .design-item:hover .design-img img {
+            transform: scale(1.1);
+        }
+
+        .design-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 15, 28, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .design-img:hover .design-img-overlay {
+            opacity: 1;
+        }
+
+        .design-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 2;
+            box-shadow: var(--shadow);
+        }
+
+        .design-caption {
+            padding: 25px;
+        }
+
+        .design-caption h4 {
+            margin-bottom: 10px;
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+
+        .design-caption p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .design-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-gray);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .contact-item i {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-gray);
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 18px 20px;
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
+            transition: var(--transition);
+            background: var(--light-gray);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(149, 81, 73, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
         }
 
         /* PDF Viewer Modal */
@@ -642,96 +872,6 @@
             right: -70px;
         }
 
-        /* Contact Section */
-        .contact {
-            background-color: var(--light);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 60px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 25px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid var(--border-gray);
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .contact-item i {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 50px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-gray);
-        }
-
-        .form-group {
-            margin-bottom: 30px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: var(--dark);
-            font-size: 1.1rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 18px 20px;
-            border: 2px solid var(--border-gray);
-            border-radius: 12px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.05rem;
-            transition: var(--transition);
-            background: var(--light-gray);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(149, 81, 73, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 180px;
-            resize: vertical;
-        }
-
         /* Footer */
         footer {
             background: linear-gradient(135deg, var(--dark) 0%, #2d1a2b 100%);
@@ -759,7 +899,7 @@
         }
 
         .footer-logo {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Roboto Mono', monospace;
             font-size: 2rem;
             font-weight: 800;
             color: white;
@@ -871,7 +1011,8 @@
                 justify-content: center;
             }
             
-            .portfolio-grid {
+            .portfolio-grid,
+            .design-grid {
                 grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             }
             
@@ -929,17 +1070,9 @@
             }
             
             .skills-container,
-            .portfolio-grid {
+            .portfolio-grid,
+            .design-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .portfolio-filters {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .filter-btn {
-                width: 200px;
             }
             
             .contact-container {
@@ -998,7 +1131,8 @@
                 padding: 40px 30px;
             }
             
-            .portfolio-img {
+            .portfolio-img,
+            .design-img {
                 height: 220px;
             }
             
@@ -1010,6 +1144,10 @@
             .pdf-viewer {
                 padding: 15px;
             }
+            
+            .design-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -1018,8 +1156,8 @@
     <header id="header">
         <div class="nav-container container">
             <a href="#" class="logo">
-                <i class="fas fa-palette"></i>
-                Alex<span>Martin</span>
+                <i class="fas fa-code"></i>
+                JM<span>.</span>
             </a>
             
             <button class="mobile-menu-btn" id="mobile-menu-btn">
@@ -1029,7 +1167,8 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
                 <li><a href="#competences"><i class="fas fa-code"></i> Compétences</a></li>
-                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="#portfolio"><i class="fas fa-laptop-code"></i> Projets Web</a></li>
+                <li><a href="#design"><i class="fas fa-palette"></i> Design Graphique</a></li>
                 <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
@@ -1039,19 +1178,26 @@
     <section class="hero" id="accueil">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Alex Martin</h1>
-                <p><strong>Infographe & Développeur Front-end</strong> avec 8 ans d'expérience dans la création d'interfaces utilisateur innovantes et d'expériences digitales mémorables. Passionné par l'intersection entre design et technologie.</p>
+                <h1>Jérémie MABAYI</h1>
+                <p class="code-font" style="font-size: 1.4rem; color: var(--primary); margin-bottom: 1rem;">Informaticien / Cybersécurité</p>
+                <p>Informaticien de niveau intermédiaire, orienté cybersécurité et développement informatique. Formé aux standards internationaux via Cisco Networking Academy, avec de solides compétences en sécurité informatique, programmation Python et développement web fullstack.</p>
+                
+                <div class="hero-tags">
+                    <div class="tag">Cybersécurité</div>
+                    <div class="tag">Python</div>
+                    <div class="tag">Développement Web</div>
+                    <div class="tag">Ethical Hacking</div>
+                    <div class="tag">Design Graphique</div>
+                    <div class="tag">IA appliquée</div>
+                </div>
+                
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn">
-                        <i class="fas fa-eye"></i> Voir mes projets
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-paper-plane"></i> Me contacter
-                    </a>
+                    <a href="#portfolio" class="btn">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline">Me contacter</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Alex Martin - Infographe Développeur">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Jérémie MABAYI - Cybersécurité">
             </div>
         </div>
     </section>
@@ -1060,73 +1206,119 @@
     <section class="skills" id="competences">
         <div class="container">
             <div class="section-title">
-                <h2>Mes Compétences</h2>
-                <p>Une expertise polyvalente alliant créativité visuelle et développement technique</p>
+                <h2>Compétences Techniques</h2>
+                <p>Un mélange de cybersécurité, développement et design graphique</p>
             </div>
             
             <div class="skills-container">
                 <div class="skill-category">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Design & Infographie</h3>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Cybersécurité</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> UI/UX Design & prototypage (Figma, Adobe XD)</li>
-                        <li><i class="fas fa-check-circle"></i> Identité visuelle & branding</li>
-                        <li><i class="fas fa-check-circle"></i> Illustration digitale & vectorielle</li>
-                        <li><i class="fas fa-check-circle"></i> Animation 2D/3D (After Effects, Blender)</li>
-                        <li><i class="fas fa-check-circle"></i> Montage photo & retouche (Photoshop)</li>
-                        <li><i class="fas fa-check-circle"></i> Design d'interface & expérience utilisateur</li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Cybersécurité
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Ethical Hacking
+                            </div>
+                            <div class="skill-level">Bases</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Sécurité réseaux
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> IA appliquée
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Développement Web</h3>
+                    <i class="fas fa-code"></i>
+                    <h3>Développement</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> HTML5, CSS3, JavaScript (ES6+)</li>
-                        <li><i class="fas fa-check-circle"></i> React.js, Vue.js & frameworks modernes</li>
-                        <li><i class="fas fa-check-circle"></i> Développement Front-end avancé</li>
-                        <li><i class="fas fa-check-circle"></i> Intégration responsive & cross-browser</li>
-                        <li><i class="fas fa-check-circle"></i> APIs REST, GraphQL & WebSocket</li>
-                        <li><i class="fas fa-check-circle"></i> Performance & optimisation SEO</li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Python
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Développement Web
+                            </div>
+                            <div class="skill-level">Fullstack</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Maintenance applications
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> HTML/CSS/JavaScript
+                            </div>
+                            <div class="skill-level">Avancé</div>
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <i class="fas fa-tools"></i>
-                    <h3>Outils & Méthodologies</h3>
+                    <i class="fas fa-palette"></i>
+                    <h3>Design Graphique</h3>
                     <ul class="skill-list">
-                        <li><i class="fas fa-check-circle"></i> Suite Adobe Creative Cloud</li>
-                        <li><i class="fas fa-check-circle"></i> Figma, Sketch & outils de prototypage</li>
-                        <li><i class="fas fa-check-circle"></i> Git, GitHub & outils de versioning</li>
-                        <li><i class="fas fa-check-circle"></i> Méthodologies Agile & Scrum</li>
-                        <li><i class="fas fa-check-circle"></i> Tests unitaires & intégration continue</li>
-                        <li><i class="fas fa-check-circle"></i> Accessibilité web (WCAG)</li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Retouche photo
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Création visuelle
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Mise en page PDF
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
+                        <li>
+                            <div class="skill-name">
+                                <i class="fas fa-check"></i> Canva & Photoshop
+                            </div>
+                            <div class="skill-level">Intermédiaire</div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Portfolio -->
+    <!-- Section Portfolio Web -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>Mes Réalisations</h2>
-                <p>Une sélection de mes projets récents en design et développement</p>
-            </div>
-            
-            <div class="portfolio-filters">
-                <button class="filter-btn active" data-filter="all">Tous les projets</button>
-                <button class="filter-btn" data-filter="design">Design & UI/UX</button>
-                <button class="filter-btn" data-filter="web">Développement Web</button>
-                <button class="filter-btn" data-filter="animation">Animation & 3D</button>
+                <h2>Projets Web</h2>
+                <p>Sites web développés et déployés avec des technologies modernes</p>
             </div>
             
             <div class="portfolio-grid">
-                <!-- Projet 1 - Design -->
-                <div class="portfolio-item" data-category="design">
-                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
-                        <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Identité visuelle startup">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Site de lecture Muyambili">
                         <div class="portfolio-img-overlay">
                             <button class="preview-btn" data-image-preview>
                                 <i class="fas fa-expand"></i> Aperçu
@@ -1134,18 +1326,22 @@
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Identité Visuelle - Startup Tech</h3>
-                        <p>Création complète d'une identité visuelle pour une startup innovante dans la tech, incluant logo, palette de couleurs, typographie et guidelines.</p>
-                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project1">
-                            <i class="fas fa-file-pdf"></i> Voir le dossier complet
-                        </button>
+                        <h3>Muyambili - Plateforme de Lecture</h3>
+                        <p>Site web moderne pour la lecture et le partage de contenus littéraires. Développé avec des technologies front-end modernes pour une expérience utilisateur fluide.</p>
+                        <div class="portfolio-tags">
+                            <div class="portfolio-tag">Développement Web</div>
+                            <div class="portfolio-tag">Vercel</div>
+                            <div class="portfolio-tag">Responsive</div>
+                        </div>
+                        <a href="https://muyambili.vercel.app/" target="_blank" class="btn btn-small" style="margin-top: 15px;">
+                            <i class="fas fa-external-link-alt"></i> Visiter le site
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Projet 2 - Web -->
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Plateforme e-commerce">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Agence événementielle Elite Prestation">
                         <div class="portfolio-img-overlay">
                             <button class="preview-btn" data-image-preview>
                                 <i class="fas fa-expand"></i> Aperçu
@@ -1153,18 +1349,22 @@
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Plateforme E-commerce Luxe</h3>
-                        <p>Développement front-end d'une plateforme e-commerce haut de gamme avec React, intégration d'API de paiement et design responsive.</p>
-                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project2">
-                            <i class="fas fa-file-pdf"></i> Voir la documentation
-                        </button>
+                        <h3>Elite Prestation - Agence Événementielle</h3>
+                        <p>Site web professionnel pour une agence événementielle. Présentation des services, portfolio et formulaire de contact intégré.</p>
+                        <div class="portfolio-tags">
+                            <div class="portfolio-tag">Agence</div>
+                            <div class="portfolio-tag">Événementiel</div>
+                            <div class="portfolio-tag">Vercel</div>
+                        </div>
+                        <a href="https://eliteprestation.vercel.app/" target="_blank" class="btn btn-small" style="margin-top: 15px;">
+                            <i class="fas fa-external-link-alt"></i> Visiter le site
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Projet 3 - Animation -->
-                <div class="portfolio-item" data-category="animation">
-                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Animation 3D produit">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Finance Elite - Devis et Factures">
                         <div class="portfolio-img-overlay">
                             <button class="preview-btn" data-image-preview>
                                 <i class="fas fa-expand"></i> Aperçu
@@ -1172,68 +1372,184 @@
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Animation 3D - Produit High-tech</h3>
-                        <p>Animation 3D photoréaliste d'un produit high-tech pour une campagne marketing, réalisée avec Blender et After Effects.</p>
-                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project3">
-                            <i class="fas fa-file-pdf"></i> Voir le storyboard
-                        </button>
+                        <h3>Finance Elite - Gestion Devis & Factures</h3>
+                        <p>Application web complète pour la création, gestion et suivi de devis et factures. Interface intuitive avec fonctionnalités de calcul automatique.</p>
+                        <div class="portfolio-tags">
+                            <div class="portfolio-tag">Finance</div>
+                            <div class="portfolio-tag">Gestion</div>
+                            <div class="portfolio-tag">JavaScript</div>
+                        </div>
+                        <a href="https://nemesis1empire.github.io/FinanceElite/" target="_blank" class="btn btn-small" style="margin-top: 15px;">
+                            <i class="fas fa-external-link-alt"></i> Visiter le site
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Design Graphique -->
+    <section class="design" id="design">
+        <div class="container">
+            <div class="section-title">
+                <h2>Design Graphique</h2>
+                <p>Créations visuelles, retouches photo et mises en page professionnelles</p>
+            </div>
+            
+            <div class="design-grid">
+                <div class="design-item">
+                    <div class="design-img" data-image="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Retouche photo professionnelle">
+                        <div class="design-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
+                        </div>
+                        <div class="design-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <div class="design-caption">
+                        <h4>Retouche Photo Professionnelle</h4>
+                        <p>Correction des couleurs, élimination des imperfections et amélioration de la qualité d'image pour des résultats professionnels.</p>
+                        <div class="design-buttons">
+                            <button class="btn btn-small" data-image-preview>
+                                <i class="fas fa-eye"></i> Voir l'image
+                            </button>
+                            <button class="btn btn-small btn-secondary" data-pdf="retouche">
+                                <i class="fas fa-file-pdf"></i> Voir le processus
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Projet 4 - Web -->
-                <div class="portfolio-item" data-category="web">
-                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Application dashboard">
-                        <div class="portfolio-img-overlay">
+                <div class="design-item">
+                    <div class="design-img" data-image="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bannières marketing">
+                        <div class="design-img-overlay">
                             <button class="preview-btn" data-image-preview>
                                 <i class="fas fa-expand"></i> Aperçu
                             </button>
                         </div>
+                        <div class="design-icon">
+                            <i class="fas fa-ad"></i>
+                        </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h3>Dashboard Analytics</h3>
-                        <p>Application web de visualisation de données avec Vue.js et D3.js, permettant l'analyse en temps réel de métriques complexes.</p>
-                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project4">
-                            <i class="fas fa-file-pdf"></i> Voir les spécifications
-                        </button>
+                    <div class="design-caption">
+                        <h4>Bannières Publicitaires</h4>
+                        <p>Conception de bannières visuellement attractives pour campagnes digitales, réseaux sociaux et publicités en ligne.</p>
+                        <div class="design-buttons">
+                            <button class="btn btn-small" data-image-preview>
+                                <i class="fas fa-eye"></i> Voir les formats
+                            </button>
+                            <button class="btn btn-small btn-secondary" data-pdf="bannieres">
+                                <i class="fas fa-file-pdf"></i> Pack complet
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Projet 5 - Design -->
-                <div class="portfolio-item" data-category="design">
-                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
-                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="UI/UX design">
-                        <div class="portfolio-img-overlay">
+                <div class="design-item">
+                    <div class="design-img" data-image="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Infographies">
+                        <div class="design-img-overlay">
                             <button class="preview-btn" data-image-preview>
                                 <i class="fas fa-expand"></i> Aperçu
                             </button>
                         </div>
+                        <div class="design-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h3>UI/UX - Application Santé</h3>
-                        <p>Conception d'interface utilisateur et expérience utilisateur pour une application mobile de santé, avec prototypage interactif.</p>
-                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project5">
-                            <i class="fas fa-file-pdf"></i> Voir les wireframes
-                        </button>
+                    <div class="design-caption">
+                        <h4>Infographies & Data Visualisation</h4>
+                        <p>Transformation de données complexes en visuels clairs et impactants pour rapports, présentations et communications.</p>
+                        <div class="design-buttons">
+                            <button class="btn btn-small" data-image-preview>
+                                <i class="fas fa-eye"></i> Voir l'infographie
+                            </button>
+                            <button class="btn btn-small btn-secondary" data-pdf="infographie">
+                                <i class="fas fa-file-pdf"></i> Télécharger
+                            </button>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Projet 6 - Animation -->
-                <div class="portfolio-item" data-category="animation">
-                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
-                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Motion design">
-                        <div class="portfolio-img-overlay">
+                <div class="design-item">
+                    <div class="design-img" data-image="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brochures et dépliants">
+                        <div class="design-img-overlay">
                             <button class="preview-btn" data-image-preview>
                                 <i class="fas fa-expand"></i> Aperçu
                             </button>
                         </div>
+                        <div class="design-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
                     </div>
-                    <div class="portfolio-info">
-                        <h3>Motion Design - Service Financier</h3>
-                        <p>Création d'une vidéo en motion design pour expliquer un service financier complexe de manière simple et engageante.</p>
-                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project6">
-                            <i class="fas fa-file-pdf"></i> Voir le storyboard
-                        </button>
+                    <div class="design-caption">
+                        <h4>Brochures & Dépliants</h4>
+                        <p>Conception de supports print avec mise en page créative, équilibre visuel et hiérarchie d'information optimale.</p>
+                        <div class="design-buttons">
+                            <button class="btn btn-small" data-image-preview>
+                                <i class="fas fa-eye"></i> Feuilleter
+                            </button>
+                            <button class="btn btn-small btn-secondary" data-pdf="brochure">
+                                <i class="fas fa-file-pdf"></i> PDF Print
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="design-item">
+                    <div class="design-img" data-image="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Montage photo créatif">
+                        <div class="design-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
+                        </div>
+                        <div class="design-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                    </div>
+                    <div class="design-caption">
+                        <h4>Montage Photo Créatif</h4>
+                        <p>Compositions visuelles originales combinant plusieurs éléments graphiques pour des créations uniques et impactantes.</p>
+                        <div class="design-buttons">
+                            <button class="btn btn-small" data-image-preview>
+                                <i class="fas fa-eye"></i> Voir les détails
+                            </button>
+                            <button class="btn btn-small btn-secondary" data-pdf="montage">
+                                <i class="fas fa-file-pdf"></i> Version HD
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="design-item">
+                    <div class="design-img" data-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Mise en page PDF">
+                        <div class="design-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
+                        </div>
+                        <div class="design-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                    </div>
+                    <div class="design-caption">
+                        <h4>Présentation Commerciale</h4>
+                        <p>Création de présentations PDF professionnelles avec mise en page soignée, typographie adaptée et éléments visuels impactants.</p>
+                        <div class="design-buttons">
+                            <button class="btn btn-small" data-image-preview>
+                                <i class="fas fa-eye"></i> Prévisualiser
+                            </button>
+                            <button class="btn btn-small btn-secondary" data-pdf="presentation">
+                                <i class="fas fa-file-pdf"></i> Voir le PDF
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1278,8 +1594,8 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contactez-moi</h2>
-                <p>Discutons de votre projet et créons ensemble quelque chose d'extraordinaire</p>
+                <h2>Contact</h2>
+                <p>Disponible pour des opportunités en cybersécurité, développement et design graphique</p>
             </div>
             
             <div class="contact-container">
@@ -1288,7 +1604,7 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>Localisation</h3>
-                            <p>Lyon, France</p>
+                            <p>Akanda, Gabon</p>
                             <p style="color: var(--gray); margin-top: 5px; font-size: 0.95rem;">Disponible pour des projets en remote dans le monde entier</p>
                         </div>
                     </div>
@@ -1297,7 +1613,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>alex.martin@portfolio.com</p>
+                            <p>jeremiednl@gmail.com</p>
                             <p style="color: var(--gray); margin-top: 5px; font-size: 0.95rem;">Réponse sous 24h maximum</p>
                         </div>
                     </div>
@@ -1306,19 +1622,24 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Téléphone</h3>
-                            <p>+33 6 12 34 56 78</p>
+                            <p>074 67 58 14 / 062 12 77 08 (WhatsApp)</p>
                             <p style="color: var(--gray); margin-top: 5px; font-size: 0.95rem;">Lundi - Vendredi: 9h - 18h</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-globe"></i>
                         <div>
-                            <h3>CV & Portfolio</h3>
-                            <p>Téléchargez mon CV complet</p>
-                            <button class="btn" style="margin-top: 10px; padding: 10px 20px;" data-pdf="cv">
-                                <i class="fas fa-download"></i> Télécharger mon CV
-                            </button>
+                            <h3>Portfolio</h3>
+                            <p>https://nemesis1empire.github.io/JeremieMABAYI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-language"></i>
+                        <div>
+                            <h3>Langues</h3>
+                            <p>Français : Excellent | Anglais : Intermédiaire | Espagnol/Italien : Débutant</p>
                         </div>
                     </div>
                 </div>
@@ -1360,15 +1681,14 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <a href="#" class="footer-logo">
-                        <i class="fas fa-palette"></i> Alex<span>Martin</span>
+                        <i class="fas fa-code"></i> JM<span>.</span>
                     </a>
-                    <p>Infographe et développeur passionné, je crée des expériences digitales mémorables qui marient esthétique raffinée et performance technique. 8 ans d'expérience dans le secteur digital.</p>
+                    <p>Informaticien spécialisé en cybersécurité, développement web et design graphique. Motivé, rigoureux et en constante montée en compétences.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-behance"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/nemesis1empire" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/24162127708" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 
@@ -1377,35 +1697,35 @@
                     <ul>
                         <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Accueil</a></li>
                         <li><a href="#competences"><i class="fas fa-chevron-right"></i> Compétences</a></li>
-                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Projets Web</a></li>
+                        <li><a href="#design"><i class="fas fa-chevron-right"></i> Design Graphique</a></li>
                         <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h3>Services</h3>
+                    <h3>Projets</h3>
                     <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Design graphique</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Développement web</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Animation & motion design</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Branding & identité visuelle</a></li>
+                        <li><a href="https://muyambili.vercel.app/" target="_blank"><i class="fas fa-chevron-right"></i> Muyambili - Lecture</a></li>
+                        <li><a href="https://eliteprestation.vercel.app/" target="_blank"><i class="fas fa-chevron-right"></i> Elite Prestation</a></li>
+                        <li><a href="https://nemesis1empire.github.io/FinanceElite/" target="_blank"><i class="fas fa-chevron-right"></i> Finance Elite</a></li>
+                        <li><a href="https://nemesis1empire.github.io/JeremieMABAYI" target="_blank"><i class="fas fa-chevron-right"></i> Portfolio GitHub</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h3>Ressources</h3>
+                    <h3>Certifications</h3>
                     <ul>
+                        <li><a href="#" data-pdf="cisco"><i class="fas fa-chevron-right"></i> Cisco Networking Academy</a></li>
+                        <li><a href="#" data-pdf="cyber"><i class="fas fa-chevron-right"></i> Cybersécurité</a></li>
+                        <li><a href="#" data-pdf="python"><i class="fas fa-chevron-right"></i> Python</a></li>
                         <li><a href="#" data-pdf="cv"><i class="fas fa-chevron-right"></i> Télécharger mon CV</a></li>
-                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Voir mon portfolio</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog & articles</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tutoriels & ressources</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Alex Martin - Portfolio Infographe Développeur. Tous droits réservés. | Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i></p>
+                <p>&copy; 2023 Jérémie MABAYI. Tous droits réservés. | Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i></p>
             </div>
         </div>
     </footer>
@@ -1442,37 +1762,6 @@
             }
         });
         
-        // Filtrage du portfolio
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Retirer la classe active de tous les boutons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Ajouter la classe active au bouton cliqué
-                button.classList.add('active');
-                
-                const filterValue = button.getAttribute('data-filter');
-                
-                portfolioItems.forEach(item => {
-                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                        item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
-                    }
-                });
-            });
-        });
-        
         // Système de prévisualisation d'images
         const imageModal = document.getElementById('imageModal');
         const modalImage = document.getElementById('modalImage');
@@ -1483,18 +1772,20 @@
         let currentImageIndex = 0;
         let images = [];
         
-        // Récupérer toutes les images du portfolio
-        document.querySelectorAll('.portfolio-img').forEach((imgContainer, index) => {
+        // Récupérer toutes les images du portfolio et design
+        document.querySelectorAll('.portfolio-img, .design-img').forEach((imgContainer, index) => {
             const imgSrc = imgContainer.getAttribute('data-image');
-            images.push(imgSrc);
-            
-            // Ajouter l'événement de clic pour chaque bouton d'aperçu
-            imgContainer.querySelector('[data-image-preview]').addEventListener('click', () => {
-                currentImageIndex = index;
-                modalImage.src = imgSrc;
-                imageModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+            if (imgSrc) {
+                images.push(imgSrc);
+                
+                // Ajouter l'événement de clic pour chaque bouton d'aperçu
+                imgContainer.querySelector('[data-image-preview]').addEventListener('click', () => {
+                    currentImageIndex = index;
+                    modalImage.src = imgSrc;
+                    imageModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
         });
         
         // Fermer la modal d'image
@@ -1529,35 +1820,44 @@
         const pdfDescription = document.getElementById('pdfDescription');
         const closePdf = document.getElementById('closePdf');
         
-        // Définir les PDF pour chaque projet (remplacez par vos vrais fichiers PDF)
+        // Définir les PDF pour chaque projet
         const pdfFiles = {
-            'project1': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-            'project2': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-            'project3': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-            'project4': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-            'project5': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
-            'project6': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'retouche': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'bannieres': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'infographie': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'brochure': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'montage': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'presentation': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'cisco': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'cyber': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'python': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
             'cv': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
         };
         
         const pdfTitles = {
-            'project1': 'Identité Visuelle Startup Tech - Dossier complet',
-            'project2': 'Plateforme E-commerce Luxe - Documentation technique',
-            'project3': 'Animation 3D Produit High-tech - Storyboard',
-            'project4': 'Dashboard Analytics - Spécifications techniques',
-            'project5': 'UI/UX Application Santé - Wireframes et prototypes',
-            'project6': 'Motion Design Service Financier - Storyboard',
-            'cv': 'CV - Alex Martin - Infographe Développeur'
+            'retouche': 'Processus de Retouche Photo - Jérémie MABAYI',
+            'bannieres': 'Pack Bannières Publicitaires - Formats disponibles',
+            'infographie': 'Infographie & Data Visualisation - Exemples',
+            'brochure': 'Brochures & Dépliants - Conception Print',
+            'montage': 'Montage Photo Créatif - Techniques utilisées',
+            'presentation': 'Présentation Commerciale - Design PDF',
+            'cisco': 'Certifications Cisco Networking Academy',
+            'cyber': 'Certifications Cybersécurité',
+            'python': 'Certifications Python & Développement',
+            'cv': 'CV - Jérémie MABAYI - Informaticien Cybersécurité'
         };
         
         const pdfDescriptions = {
-            'project1': 'Dossier complet du projet d\'identité visuelle, incluant les concepts créatifs, palettes de couleurs, typographies et applications diverses.',
-            'project2': 'Documentation technique et fonctionnelle de la plateforme e-commerce, avec spécifications et architecture technique détaillée.',
-            'project3': 'Storyboard détaillé et présentation du projet d\'animation 3D, incluant les étapes de production et rendus finaux.',
-            'project4': 'Cahier des charges et documentation technique de l\'application de visualisation de données en temps réel.',
-            'project5': 'Wireframes, prototypes interactifs et spécifications UX/UI complètes de l\'application mobile de santé.',
-            'project6': 'Storyboard, planning de production et détails créatifs de la vidéo motion design explicative pour service financier.',
-            'cv': 'Curriculum Vitae complet d\'Alex Martin avec expériences professionnelles, compétences techniques et projets réalisés.'
+            'retouche': 'Documentation détaillée du processus de retouche photo professionnelle avec exemples avant/après.',
+            'bannieres': 'Pack complet de bannières publicitaires pour différents formats et plateformes digitales.',
+            'infographie': 'Exemples d\'infographies et visualisations de données réalisées pour divers projets.',
+            'brochure': 'Conception de brochures et dépliants avec mise en page optimisée pour l\'impression.',
+            'montage': 'Techniques et processus de montage photo créatif avec compositions originales.',
+            'presentation': 'Présentation commerciale avec design professionnel et mise en page soignée.',
+            'cisco': 'Certifications obtenues via Cisco Networking Academy en réseaux et cybersécurité.',
+            'cyber': 'Certifications et formations en cybersécurité et ethical hacking.',
+            'python': 'Certifications et projets en programmation Python.',
+            'cv': 'Curriculum Vitae complet avec expériences, compétences et certifications.'
         };
         
         // Ouvrir le lecteur PDF
@@ -1567,7 +1867,7 @@
                 
                 if (pdfFiles[pdfId]) {
                     pdfFrame.src = pdfFiles[pdfId];
-                    pdfTitle.textContent = pdfTitles[pdfId] || 'Détails du projet';
+                    pdfTitle.textContent = pdfTitles[pdfId] || 'Document PDF';
                     pdfDescription.textContent = pdfDescriptions[pdfId] || 'Document PDF du projet. Vous pouvez naviguer, zoomer et télécharger le fichier.';
                     
                     pdfModal.classList.add('active');
@@ -1641,7 +1941,7 @@
         }, observerOptions);
         
         // Observer les éléments à animer
-        document.querySelectorAll('.skill-category, .portfolio-item, .contact-form, .contact-item').forEach(el => {
+        document.querySelectorAll('.skill-category, .portfolio-item, .design-item, .contact-form, .contact-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
