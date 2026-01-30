@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jérémie MABAYI | Cybersécurité & Développement</title>
+    <title>Portfolio | Infographe Développeur</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0ea5e9;
-            --cyber-blue: #3b82f6;
-            --cyber-dark: #1e40af;
-            --dark: #0f172a;
-            --dark-light: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --light-gray: #e2e8f0;
-            --success: #10b981;
+            --primary: #955149;
+            --primary-light: #b36c64;
+            --primary-dark: #7a4039;
+            --secondary: #E2E9C0;
+            --secondary-light: #f0f5d8;
+            --secondary-dark: #d4dbb0;
+            --dark: #1E0F1C;
+            --light: #ffffff;
+            --gray: #6c757d;
+            --light-gray: #f8f9fa;
+            --border-gray: #e2e8f0;
             --transition: all 0.3s ease;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --border-radius: 8px;
-            --cyber-gradient: linear-gradient(135deg, var(--cyber-blue), var(--cyber-dark));
+            --shadow: 0 4px 20px rgba(30, 15, 28, 0.1);
+            --shadow-hover: 0 10px 40px rgba(30, 15, 28, 0.15);
+            --border-radius: 16px;
+            --section-spacing: 100px;
         }
 
         * {
@@ -37,28 +38,22 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--light);
-            background-color: var(--dark);
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
             overflow-x: hidden;
         }
 
-        .code-font {
-            font-family: 'Roboto Mono', monospace;
-        }
-
         h1, h2, h3, h4, h5 {
+            font-family: 'Raleway', sans-serif;
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 1rem;
         }
 
         h1 {
-            font-size: 3.2rem;
-            background: var(--cyber-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 3.5rem;
+            color: var(--dark);
         }
 
         h2 {
@@ -66,30 +61,34 @@
             position: relative;
             display: inline-block;
             margin-bottom: 3rem;
+            color: var(--dark);
         }
 
         h2::after {
             content: '';
             position: absolute;
-            width: 60%;
-            height: 4px;
-            background: var(--cyber-gradient);
-            bottom: -10px;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            bottom: -15px;
             left: 0;
-            border-radius: 2px;
+            border-radius: 5px;
         }
 
         h3 {
             font-size: 1.8rem;
+            color: var(--dark);
         }
 
         p {
-            margin-bottom: 1rem;
-            color: var(--light-gray);
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         section {
-            padding: 100px 5%;
+            padding: var(--section-spacing) 5%;
         }
 
         .container {
@@ -99,41 +98,35 @@
 
         .btn {
             display: inline-block;
-            padding: 14px 32px;
-            background: var(--cyber-gradient);
+            padding: 16px 36px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
             color: white;
             border: none;
-            border-radius: var(--border-radius);
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
             font-size: 1rem;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            box-shadow: 0 4px 15px rgba(149, 81, 73, 0.3);
+            letter-spacing: 0.5px;
         }
 
         .btn:hover {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 8px 25px rgba(149, 81, 73, 0.4);
         }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--cyber-blue);
-            color: var(--cyber-blue);
-            box-shadow: none;
+        .btn-secondary {
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-light));
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(226, 233, 192, 0.3);
         }
 
-        .btn-outline:hover {
-            background: rgba(59, 130, 246, 0.1);
-        }
-
-        .btn-small {
-            padding: 8px 16px;
-            font-size: 0.9rem;
+        .btn-secondary:hover {
+            background: linear-gradient(90deg, var(--secondary-dark), var(--secondary));
+            box-shadow: 0 8px 25px rgba(226, 233, 192, 0.4);
         }
 
         .section-title {
@@ -153,15 +146,16 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(15, 23, 42, 0.95);
+            background-color: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 20px rgba(30, 15, 28, 0.05);
             padding: 20px 5%;
             transition: var(--transition);
         }
 
         header.scrolled {
             padding: 15px 5%;
+            box-shadow: 0 5px 30px rgba(30, 15, 28, 0.08);
         }
 
         .nav-container {
@@ -171,48 +165,53 @@
         }
 
         .logo {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--cyber-blue);
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .logo span {
-            color: var(--secondary);
+            color: var(--dark);
+        }
+
+        .logo i {
+            font-size: 1.8rem;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 2.5rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--light);
-            font-weight: 500;
+            color: var(--dark);
+            font-weight: 600;
             transition: var(--transition);
             position: relative;
-            padding: 5px 0;
+            font-size: 1.05rem;
         }
 
         .nav-links a:hover {
-            color: var(--cyber-blue);
+            color: var(--primary);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 2px;
-            background: var(--cyber-blue);
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             left: 0;
-            bottom: 0;
+            bottom: -8px;
             transition: var(--transition);
+            border-radius: 3px;
         }
 
         .nav-links a:hover::after {
@@ -223,14 +222,17 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--light);
+            color: var(--dark);
+            background: none;
+            border: none;
+            z-index: 1001;
         }
 
         /* Hero Section */
         .hero {
             padding-top: 180px;
-            padding-bottom: 100px;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+            padding-bottom: var(--section-spacing);
+            background: linear-gradient(135deg, #f8f9fa 0%, #edf2f7 100%);
             position: relative;
             overflow: hidden;
         }
@@ -241,8 +243,8 @@
             width: 600px;
             height: 600px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0) 70%);
-            top: -200px;
+            background: linear-gradient(45deg, rgba(149, 81, 73, 0.08) 0%, rgba(226, 233, 192, 0.08) 100%);
+            top: -300px;
             right: -200px;
         }
 
@@ -250,11 +252,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 40px;
+            gap: 60px;
         }
 
         .hero-text {
             flex: 1;
+            max-width: 600px;
         }
 
         .hero-text h1 {
@@ -262,77 +265,49 @@
         }
 
         .hero-text p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             margin-bottom: 2.5rem;
-            max-width: 600px;
+            color: var(--gray);
         }
 
-        .hero-tags {
+        .hero-buttons {
             display: flex;
+            gap: 20px;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 2rem;
-        }
-
-        .tag {
-            padding: 8px 16px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--cyber-blue);
         }
 
         .hero-image {
             flex: 1;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             position: relative;
         }
 
         .hero-image img {
             max-width: 100%;
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid var(--cyber-blue);
-            border-radius: var(--border-radius);
-            top: 20px;
-            right: 20px;
-            z-index: 1;
-        }
-
-        .highlight {
-            color: var(--cyber-blue);
+            box-shadow: var(--shadow-hover);
+            border: 10px solid white;
         }
 
         /* Compétences Section */
         .skills {
-            background-color: var(--dark-light);
+            background-color: var(--light);
         }
 
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
         .skill-category {
-            background: rgba(15, 23, 42, 0.7);
-            padding: 40px 30px;
+            background: white;
+            padding: 50px 40px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--border-gray);
             position: relative;
             overflow: hidden;
         }
@@ -343,19 +318,23 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: var(--cyber-gradient);
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
 
         .skill-category:hover {
-            transform: translateY(-10px);
-            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
         }
 
         .skill-category i {
-            font-size: 2.5rem;
-            color: var(--cyber-blue);
-            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .skill-list {
@@ -363,102 +342,98 @@
         }
 
         .skill-list li {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            font-size: 1.1rem;
         }
 
-        .skill-name {
-            display: flex;
-            align-items: center;
-        }
-
-        .skill-name i {
-            font-size: 1rem;
-            margin-right: 10px;
-            color: var(--secondary);
-        }
-
-        .skill-level {
-            font-size: 0.9rem;
-            color: var(--gray);
-            font-weight: 500;
+        .skill-list li i {
+            font-size: 1.2rem;
+            margin-right: 15px;
+            color: var(--primary);
+            -webkit-text-fill-color: var(--primary);
+            background: none;
         }
 
         /* Portfolio Section */
         .portfolio {
-            background-color: var(--dark);
+            background-color: var(--light-gray);
         }
 
         .portfolio-filters {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 3rem;
-            gap: 10px;
+            margin-bottom: 4rem;
+            gap: 15px;
         }
 
         .filter-btn {
-            padding: 10px 20px;
-            background: rgba(15, 23, 42, 0.7);
-            border: 2px solid rgba(59, 130, 246, 0.2);
+            padding: 12px 28px;
+            background: white;
+            border: 2px solid var(--border-gray);
             border-radius: 50px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            color: var(--light);
+            font-size: 1rem;
+            color: var(--gray);
         }
 
         .filter-btn.active, .filter-btn:hover {
-            background: var(--cyber-blue);
-            border-color: var(--cyber-blue);
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: white;
+            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(149, 81, 73, 0.2);
         }
 
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 40px;
         }
 
         .portfolio-item {
-            background: rgba(15, 23, 42, 0.7);
+            background: white;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--border-gray);
         }
 
         .portfolio-item:hover {
-            transform: translateY(-10px);
-            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
         }
 
         .portfolio-img {
-            height: 200px;
+            height: 280px;
             overflow: hidden;
             position: relative;
+            cursor: pointer;
         }
 
         .portfolio-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: var(--transition);
         }
 
         .portfolio-item:hover .portfolio-img img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
 
-        .portfolio-overlay {
+        .portfolio-img-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 23, 42, 0.7);
+            background: rgba(30, 15, 28, 0.8);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -466,237 +441,330 @@
             transition: var(--transition);
         }
 
-        .portfolio-item:hover .portfolio-overlay {
+        .portfolio-img:hover .portfolio-img-overlay {
             opacity: 1;
         }
 
-        .portfolio-overlay a {
-            color: white;
-            background: var(--cyber-blue);
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 500;
-            transform: translateY(20px);
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-overlay a {
-            transform: translateY(0);
-        }
-
-        .portfolio-info {
-            padding: 25px;
-        }
-
-        .portfolio-info h3 {
-            margin-bottom: 10px;
-        }
-
-        .portfolio-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .portfolio-tag {
-            padding: 5px 12px;
-            background: rgba(59, 130, 246, 0.1);
+        .preview-btn {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 12px 24px;
             border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--cyber-blue);
-        }
-
-        /* Design Graphique Section */
-        .design {
-            background-color: var(--dark-light);
-        }
-
-        .design-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .design-item {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
+            font-weight: 600;
+            cursor: pointer;
             transition: var(--transition);
-            border: 1px solid rgba(59, 130, 246, 0.1);
-            background: rgba(15, 23, 42, 0.7);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .design-item:hover {
-            transform: translateY(-5px);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .design-img {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .design-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .design-item:hover .design-img img {
+        .preview-btn:hover {
+            background: var(--primary);
+            color: white;
             transform: scale(1.05);
         }
 
-        .design-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(15, 23, 42, 0.8);
-            color: var(--cyber-blue);
+        .portfolio-info {
+            padding: 30px;
+        }
+
+        .portfolio-info h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .portfolio-info p {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        /* PDF Viewer Modal */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 15, 28, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .pdf-modal.active {
+            display: flex;
+        }
+
+        .pdf-modal-content {
+            background: white;
+            border-radius: var(--border-radius);
+            width: 90%;
+            max-width: 1000px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .pdf-modal-header {
+            padding: 20px 30px;
+            background: var(--light-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-gray);
+        }
+
+        .pdf-modal-header h3 {
+            margin: 0;
+            color: var(--dark);
+        }
+
+        .close-pdf {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
             width: 40px;
             height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            z-index: 2;
         }
 
-        .design-caption {
+        .close-pdf:hover {
+            background: var(--border-gray);
+            color: var(--dark);
+        }
+
+        .pdf-viewer {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .pdf-info {
+            padding: 20px 30px;
+            background: var(--light-gray);
+            border-top: 1px solid var(--border-gray);
+        }
+
+        /* Image Preview Modal */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 15, 28, 0.98);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
         }
 
-        .design-caption h4 {
-            margin-bottom: 5px;
-            color: var(--light);
-        }
-
-        .design-caption p {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-
-        .design-buttons {
+        .image-modal.active {
             display: flex;
-            gap: 10px;
         }
 
-        .design-btn {
-            padding: 8px 15px;
-            background: rgba(59, 130, 246, 0.1);
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: var(--border-radius);
-            color: var(--cyber-blue);
-            text-decoration: none;
-            font-size: 0.9rem;
+        .image-modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .image-modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .close-image {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
-        .design-btn:hover {
-            background: rgba(59, 130, 246, 0.2);
+        .close-image:hover {
+            color: var(--secondary);
+        }
+
+        .image-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(226, 233, 192, 0.2);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .image-nav:hover {
+            background: rgba(226, 233, 192, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-image {
+            left: -70px;
+        }
+
+        .next-image {
+            right: -70px;
         }
 
         /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+
         .contact-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
         }
 
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
         }
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 15px;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border-gray);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
         .contact-item i {
-            width: 50px;
-            height: 50px;
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--cyber-blue);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
         .contact-form {
-            background: var(--dark-light);
-            padding: 40px;
+            background: white;
+            padding: 50px;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            border: 1px solid rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--border-gray);
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--light);
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 15px;
-            background: rgba(15, 23, 42, 0.7);
-            border: 2px solid rgba(59, 130, 246, 0.2);
-            border-radius: var(--border-radius);
+            padding: 18px 20px;
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
             font-family: 'Poppins', sans-serif;
+            font-size: 1.05rem;
             transition: var(--transition);
-            color: var(--light);
+            background: var(--light-gray);
         }
 
         .form-control:focus {
             outline: none;
-            border-color: var(--cyber-blue);
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 0 3px rgba(149, 81, 73, 0.1);
         }
 
         textarea.form-control {
-            min-height: 150px;
+            min-height: 180px;
             resize: vertical;
         }
 
         /* Footer */
         footer {
-            background: rgba(15, 23, 42, 0.95);
-            padding: 60px 5% 30px;
-            border-top: 1px solid rgba(59, 130, 246, 0.1);
+            background: linear-gradient(135deg, var(--dark) 0%, #2d1a2b 100%);
+            color: white;
+            padding: 80px 5% 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-logo {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--cyber-blue);
+            font-family: 'Raleway', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
             text-decoration: none;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: inline-block;
         }
 
@@ -704,34 +772,39 @@
             color: var(--secondary);
         }
 
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(59, 130, 246, 0.1);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
-            color: var(--cyber-blue);
+            color: white;
             transition: var(--transition);
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            font-size: 1.3rem;
         }
 
         .social-links a:hover {
-            background: var(--cyber-blue);
-            color: white;
-            transform: translateY(-3px);
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .footer-links h3 {
-            color: var(--light);
-            margin-bottom: 1.5rem;
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
         }
 
         .footer-links ul {
@@ -739,29 +812,42 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .footer-links a {
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-links a:hover {
-            color: var(--cyber-blue);
-            padding-left: 5px;
+            color: var(--secondary);
+            padding-left: 8px;
+        }
+
+        .footer-links a i {
+            font-size: 0.9rem;
         }
 
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--gray);
-            font-size: 0.9rem;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
         }
 
         /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.8rem;
@@ -774,19 +860,33 @@
             .hero-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 50px;
             }
             
-            .hero-text p {
-                margin: 0 auto 2.5rem;
+            .hero-text {
+                max-width: 100%;
             }
             
-            .hero-image {
+            .hero-buttons {
                 justify-content: center;
-                margin-top: 40px;
             }
             
-            .hero-image::after {
-                display: none;
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+            
+            .image-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .prev-image {
+                left: -60px;
+            }
+            
+            .next-image {
+                right: -60px;
             }
         }
 
@@ -797,38 +897,77 @@
             
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 left: 0;
                 width: 100%;
-                background: var(--dark-light);
+                height: 100vh;
+                background: white;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 padding: 20px 0;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-                transform: translateY(-150%);
+                transform: translateX(-100%);
                 transition: var(--transition);
                 z-index: 999;
-                border-top: 1px solid rgba(59, 130, 246, 0.1);
+                gap: 2rem;
             }
             
             .nav-links.active {
-                transform: translateY(0);
+                transform: translateX(0);
             }
             
             .nav-links li {
-                margin: 15px 0;
+                margin: 0;
+            }
+            
+            .nav-links a {
+                font-size: 1.3rem;
             }
             
             section {
                 padding: 80px 5%;
             }
             
-            .portfolio-grid, .design-grid {
+            .skills-container,
+            .portfolio-grid {
                 grid-template-columns: 1fr;
             }
             
-            .design-buttons {
+            .portfolio-filters {
                 flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 200px;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .image-nav {
+                position: fixed;
+                bottom: 20px;
+                top: auto;
+                transform: none;
+            }
+            
+            .prev-image {
+                left: 20px;
+            }
+            
+            .next-image {
+                right: 20px;
+            }
+            
+            .close-image {
+                top: 20px;
+                right: 20px;
             }
         }
 
@@ -841,16 +980,35 @@
                 font-size: 1.8rem;
             }
             
+            h3 {
+                font-size: 1.5rem;
+            }
+            
             .btn {
-                padding: 12px 25px;
+                padding: 14px 28px;
+                font-size: 0.95rem;
             }
             
-            .contact-form {
-                padding: 30px 20px;
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
             }
             
-            .hero-tags {
-                justify-content: center;
+            .skill-category {
+                padding: 40px 30px;
+            }
+            
+            .portfolio-img {
+                height: 220px;
+            }
+            
+            .pdf-modal-content {
+                width: 95%;
+                height: 85vh;
+            }
+            
+            .pdf-viewer {
+                padding: 15px;
             }
         }
     </style>
@@ -859,18 +1017,20 @@
     <!-- Header et Navigation -->
     <header id="header">
         <div class="nav-container container">
-            <a href="#" class="logo">JM<span>.</span></a>
+            <a href="#" class="logo">
+                <i class="fas fa-palette"></i>
+                Alex<span>Martin</span>
+            </a>
             
-            <div class="mobile-menu-btn" id="mobile-menu-btn">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
-            </div>
+            </button>
             
             <ul class="nav-links" id="nav-links">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#portfolio">Projets Web</a></li>
-                <li><a href="#design">Design Graphique</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#competences"><i class="fas fa-code"></i> Compétences</a></li>
+                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </div>
     </header>
@@ -879,25 +1039,19 @@
     <section class="hero" id="accueil">
         <div class="container hero-content">
             <div class="hero-text">
-                <h1>Jérémie MABAYI</h1>
-                <p class="code-font">Informaticien / Cybersécurité</p>
-                <p>Informaticien de niveau intermédiaire, orienté cybersécurité et développement informatique. Formé aux standards internationaux via Cisco Networking Academy, avec de solides compétences en sécurité informatique, programmation Python et développement web fullstack.</p>
-                
-                <div class="hero-tags">
-                    <div class="tag">Cybersécurité</div>
-                    <div class="tag">Python</div>
-                    <div class="tag">Développement Web</div>
-                    <div class="tag">Ethical Hacking</div>
-                    <div class="tag">Design Graphique</div>
-                </div>
-                
+                <h1>Alex Martin</h1>
+                <p><strong>Infographe & Développeur Front-end</strong> avec 8 ans d'expérience dans la création d'interfaces utilisateur innovantes et d'expériences digitales mémorables. Passionné par l'intersection entre design et technologie.</p>
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn">Voir mes projets</a>
-                    <a href="#contact" class="btn btn-outline">Me contacter</a>
+                    <a href="#portfolio" class="btn">
+                        <i class="fas fa-eye"></i> Voir mes projets
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane"></i> Me contacter
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Jérémie MABAYI - Cybersécurité">
+                <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Alex Martin - Infographe Développeur">
             </div>
         </div>
     </section>
@@ -906,311 +1060,226 @@
     <section class="skills" id="competences">
         <div class="container">
             <div class="section-title">
-                <h2>Compétences Techniques</h2>
-                <p>Un mélange de cybersécurité, développement et design graphique</p>
+                <h2>Mes Compétences</h2>
+                <p>Une expertise polyvalente alliant créativité visuelle et développement technique</p>
             </div>
             
             <div class="skills-container">
                 <div class="skill-category">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Cybersécurité</h3>
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Design & Infographie</h3>
                     <ul class="skill-list">
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Cybersécurité
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Ethical Hacking
-                            </div>
-                            <div class="skill-level">Bases</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Sécurité réseaux
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> IA appliquée
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
+                        <li><i class="fas fa-check-circle"></i> UI/UX Design & prototypage (Figma, Adobe XD)</li>
+                        <li><i class="fas fa-check-circle"></i> Identité visuelle & branding</li>
+                        <li><i class="fas fa-check-circle"></i> Illustration digitale & vectorielle</li>
+                        <li><i class="fas fa-check-circle"></i> Animation 2D/3D (After Effects, Blender)</li>
+                        <li><i class="fas fa-check-circle"></i> Montage photo & retouche (Photoshop)</li>
+                        <li><i class="fas fa-check-circle"></i> Design d'interface & expérience utilisateur</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <i class="fas fa-code"></i>
-                    <h3>Développement</h3>
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Développement Web</h3>
                     <ul class="skill-list">
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Python
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Développement Web
-                            </div>
-                            <div class="skill-level">Fullstack</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Maintenance applications
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
+                        <li><i class="fas fa-check-circle"></i> HTML5, CSS3, JavaScript (ES6+)</li>
+                        <li><i class="fas fa-check-circle"></i> React.js, Vue.js & frameworks modernes</li>
+                        <li><i class="fas fa-check-circle"></i> Développement Front-end avancé</li>
+                        <li><i class="fas fa-check-circle"></i> Intégration responsive & cross-browser</li>
+                        <li><i class="fas fa-check-circle"></i> APIs REST, GraphQL & WebSocket</li>
+                        <li><i class="fas fa-check-circle"></i> Performance & optimisation SEO</li>
                     </ul>
                 </div>
                 
                 <div class="skill-category">
-                    <i class="fas fa-palette"></i>
-                    <h3>Design Graphique</h3>
+                    <i class="fas fa-tools"></i>
+                    <h3>Outils & Méthodologies</h3>
                     <ul class="skill-list">
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Retouche photo
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Création visuelle
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Mise en page PDF
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
-                        <li>
-                            <div class="skill-name">
-                                <i class="fas fa-check"></i> Canva & Photoshop
-                            </div>
-                            <div class="skill-level">Intermédiaire</div>
-                        </li>
+                        <li><i class="fas fa-check-circle"></i> Suite Adobe Creative Cloud</li>
+                        <li><i class="fas fa-check-circle"></i> Figma, Sketch & outils de prototypage</li>
+                        <li><i class="fas fa-check-circle"></i> Git, GitHub & outils de versioning</li>
+                        <li><i class="fas fa-check-circle"></i> Méthodologies Agile & Scrum</li>
+                        <li><i class="fas fa-check-circle"></i> Tests unitaires & intégration continue</li>
+                        <li><i class="fas fa-check-circle"></i> Accessibilité web (WCAG)</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Portfolio Web -->
+    <!-- Section Portfolio -->
     <section class="portfolio" id="portfolio">
         <div class="container">
             <div class="section-title">
-                <h2>Projets Web</h2>
-                <p>Sites web développés et déployés avec des technologies modernes</p>
+                <h2>Mes Réalisations</h2>
+                <p>Une sélection de mes projets récents en design et développement</p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">Tous les projets</button>
+                <button class="filter-btn" data-filter="design">Design & UI/UX</button>
+                <button class="filter-btn" data-filter="web">Développement Web</button>
+                <button class="filter-btn" data-filter="animation">Animation & 3D</button>
             </div>
             
             <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Site de lecture Muyambili">
-                        <div class="portfolio-overlay">
-                            <a href="https://muyambili.vercel.app/" target="_blank">Visiter le site</a>
+                <!-- Projet 1 - Design -->
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Identité visuelle startup">
+                        <div class="portfolio-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Muyambili - Plateforme de Lecture</h3>
-                        <p>Site web moderne pour la lecture et le partage de contenus littéraires. Développé avec des technologies front-end modernes pour une expérience utilisateur fluide.</p>
-                        <div class="portfolio-tags">
-                            <div class="portfolio-tag">Développement Web</div>
-                            <div class="portfolio-tag">Vercel</div>
-                            <div class="portfolio-tag">Responsive</div>
-                        </div>
+                        <h3>Identité Visuelle - Startup Tech</h3>
+                        <p>Création complète d'une identité visuelle pour une startup innovante dans la tech, incluant logo, palette de couleurs, typographie et guidelines.</p>
+                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project1">
+                            <i class="fas fa-file-pdf"></i> Voir le dossier complet
+                        </button>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Agence événementielle Elite Prestation">
-                        <div class="portfolio-overlay">
-                            <a href="https://eliteprestation.vercel.app/" target="_blank">Visiter le site</a>
+                <!-- Projet 2 - Web -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Plateforme e-commerce">
+                        <div class="portfolio-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Elite Prestation - Agence Événementielle</h3>
-                        <p>Site web professionnel pour une agence événementielle. Présentation des services, portfolio et formulaire de contact intégré.</p>
-                        <div class="portfolio-tags">
-                            <div class="portfolio-tag">Agence</div>
-                            <div class="portfolio-tag">Événementiel</div>
-                            <div class="portfolio-tag">Vercel</div>
-                        </div>
+                        <h3>Plateforme E-commerce Luxe</h3>
+                        <p>Développement front-end d'une plateforme e-commerce haut de gamme avec React, intégration d'API de paiement et design responsive.</p>
+                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project2">
+                            <i class="fas fa-file-pdf"></i> Voir la documentation
+                        </button>
                     </div>
                 </div>
                 
-                <div class="portfolio-item">
-                    <div class="portfolio-img">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Finance Elite - Devis et Factures">
-                        <div class="portfolio-overlay">
-                            <a href="https://nemesis1empire.github.io/FinanceElite/" target="_blank">Visiter le site</a>
+                <!-- Projet 3 - Animation -->
+                <div class="portfolio-item" data-category="animation">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Animation 3D produit">
+                        <div class="portfolio-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
                         </div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Finance Elite - Gestion Devis & Factures</h3>
-                        <p>Application web complète pour la création, gestion et suivi de devis et factures. Interface intuitive avec fonctionnalités de calcul automatique.</p>
-                        <div class="portfolio-tags">
-                            <div class="portfolio-tag">Finance</div>
-                            <div class="portfolio-tag">Gestion</div>
-                            <div class="portfolio-tag">JavaScript</div>
+                        <h3>Animation 3D - Produit High-tech</h3>
+                        <p>Animation 3D photoréaliste d'un produit high-tech pour une campagne marketing, réalisée avec Blender et After Effects.</p>
+                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project3">
+                            <i class="fas fa-file-pdf"></i> Voir le storyboard
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Projet 4 - Web -->
+                <div class="portfolio-item" data-category="web">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Application dashboard">
+                        <div class="portfolio-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
                         </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Dashboard Analytics</h3>
+                        <p>Application web de visualisation de données avec Vue.js et D3.js, permettant l'analyse en temps réel de métriques complexes.</p>
+                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project4">
+                            <i class="fas fa-file-pdf"></i> Voir les spécifications
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Projet 5 - Design -->
+                <div class="portfolio-item" data-category="design">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="UI/UX design">
+                        <div class="portfolio-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>UI/UX - Application Santé</h3>
+                        <p>Conception d'interface utilisateur et expérience utilisateur pour une application mobile de santé, avec prototypage interactif.</p>
+                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project5">
+                            <i class="fas fa-file-pdf"></i> Voir les wireframes
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Projet 6 - Animation -->
+                <div class="portfolio-item" data-category="animation">
+                    <div class="portfolio-img" data-image="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80">
+                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a345?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Motion design">
+                        <div class="portfolio-img-overlay">
+                            <button class="preview-btn" data-image-preview>
+                                <i class="fas fa-expand"></i> Aperçu
+                            </button>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Motion Design - Service Financier</h3>
+                        <p>Création d'une vidéo en motion design pour expliquer un service financier complexe de manière simple et engageante.</p>
+                        <button class="btn btn-secondary" style="margin-top: 15px; padding: 10px 20px;" data-pdf="project6">
+                            <i class="fas fa-file-pdf"></i> Voir le storyboard
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Design Graphique -->
-    <section class="design" id="design">
-        <div class="container">
-            <div class="section-title">
-                <h2>Design Graphique</h2>
-                <p>Créations visuelles, retouches photo et mises en page professionnelles</p>
+    <!-- Modal de prévisualisation d'image -->
+    <div class="image-modal" id="imageModal">
+        <button class="close-image" id="closeImage">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="image-nav prev-image" id="prevImage">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="image-nav next-image" id="nextImage">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="image-modal-content">
+            <img id="modalImage" src="" alt="Aperçu du projet">
+        </div>
+    </div>
+
+    <!-- Modal du lecteur PDF -->
+    <div class="pdf-modal" id="pdfModal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfTitle">Détails du projet</h3>
+                <button class="close-pdf" id="closePdf">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            
-            <div class="design-grid">
-                <div class="design-item">
-                    <div class="design-img">
-                        <img src="https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Retouche photo professionnelle">
-                        <div class="design-icon">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                    </div>
-                    <div class="design-caption">
-                        <h4>Retouche Photo Professionnelle</h4>
-                        <p>Correction des couleurs, élimination des imperfections et amélioration de la qualité d'image pour des résultats professionnels.</p>
-                        <div class="design-buttons">
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-eye"></i> Voir l'image
-                            </a>
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-download"></i> Télécharger
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="design-item">
-                    <div class="design-img">
-                        <img src="Pack.png" alt="Mise en page de présentation">
-                        <div class="design-icon">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                    </div>
-                    <div class="design-caption">
-                        <h4>Présentation Commerciale</h4>
-                        <p>Création de présentations PDF professionnelles avec mise en page soignée, typographie adaptée et éléments visuels impactants.</p>
-                        <div class="design-buttons">
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-eye"></i> Prévisualiser
-                            </a>
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-download"></i> PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="design-item">
-                    <div class="design-img">
-                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bannières marketing">
-                        <div class="design-icon">
-                            <i class="fas fa-ad"></i>
-                        </div>
-                    </div>
-                    <div class="design-caption">
-                        <h4>Bannières Publicitaires</h4>
-                        <p>Conception de bannières visuellement attractives pour campagnes digitales, réseaux sociaux et publicités en ligne.</p>
-                        <div class="design-buttons">
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-eye"></i> Voir les formats
-                            </a>
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-download"></i> Pack complet
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="design-item">
-                    <div class="design-img">
-                        <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Infographies">
-                        <div class="design-icon">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                    </div>
-                    <div class="design-caption">
-                        <h4>Infographies & Data Visualisation</h4>
-                        <p>Transformation de données complexes en visuels clairs et impactants pour rapports, présentations et communications.</p>
-                        <div class="design-buttons">
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-eye"></i> Voir l'infographie
-                            </a>
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-download"></i> Télécharger
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="design-item">
-                    <div class="design-img">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Brochures et dépliants">
-                        <div class="design-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
-                    </div>
-                    <div class="design-caption">
-                        <h4>Brochures & Dépliants</h4>
-                        <p>Conception de supports print avec mise en page créative, équilibre visuel et hiérarchie d'information optimale.</p>
-                        <div class="design-buttons">
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-eye"></i> Feuilleter
-                            </a>
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-download"></i> PDF Print
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="design-item">
-                    <div class="design-img">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Montage photo créatif">
-                        <div class="design-icon">
-                            <i class="fas fa-magic"></i>
-                        </div>
-                    </div>
-                    <div class="design-caption">
-                        <h4>Montage Photo Créatif</h4>
-                        <p>Compositions visuelles originales combinant plusieurs éléments graphiques pour des créations uniques et impactantes.</p>
-                        <div class="design-buttons">
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-eye"></i> Voir les détails
-                            </a>
-                            <a href="#" class="design-btn">
-                                <i class="fas fa-download"></i> Version HD
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="pdf-viewer">
+                <iframe id="pdfFrame" src="" title="PDF Viewer"></iframe>
+            </div>
+            <div class="pdf-info">
+                <p id="pdfDescription">Document PDF du projet. Vous pouvez naviguer, zoomer et télécharger le fichier.</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Section Contact -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
-                <h2>Contact</h2>
-                <p>Disponible pour des opportunités en cybersécurité, développement et design graphique</p>
+                <h2>Contactez-moi</h2>
+                <p>Discutons de votre projet et créons ensemble quelque chose d'extraordinaire</p>
             </div>
             
             <div class="contact-container">
@@ -1219,7 +1288,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h3>Localisation</h3>
-                            <p>Akanda, Gabon</p>
+                            <p>Lyon, France</p>
+                            <p style="color: var(--gray); margin-top: 5px; font-size: 0.95rem;">Disponible pour des projets en remote dans le monde entier</p>
                         </div>
                     </div>
                     
@@ -1227,7 +1297,8 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p>jeremiednl@gmail.com</p>
+                            <p>alex.martin@portfolio.com</p>
+                            <p style="color: var(--gray); margin-top: 5px; font-size: 0.95rem;">Réponse sous 24h maximum</p>
                         </div>
                     </div>
                     
@@ -1235,23 +1306,19 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Téléphone</h3>
-                            <p>074 67 58 14 / 062 12 77 08 (WhatsApp)</p>
+                            <p>+33 6 12 34 56 78</p>
+                            <p style="color: var(--gray); margin-top: 5px; font-size: 0.95rem;">Lundi - Vendredi: 9h - 18h</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <i class="fas fa-globe"></i>
+                        <i class="fas fa-paperclip"></i>
                         <div>
-                            <h3>Portfolio</h3>
-                            <p>https://nemesis1empire.github.io/JeremieMABAYI</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-language"></i>
-                        <div>
-                            <h3>Langues</h3>
-                            <p>Français : Excellent | Anglais : Intermédiaire | Espagnol/Italien : Débutant</p>
+                            <h3>CV & Portfolio</h3>
+                            <p>Téléchargez mon CV complet</p>
+                            <button class="btn" style="margin-top: 10px; padding: 10px 20px;" data-pdf="cv">
+                                <i class="fas fa-download"></i> Télécharger mon CV
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1259,26 +1326,28 @@
                 <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Nom complet</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <label for="name">Nom complet *</label>
+                            <input type="text" id="name" class="form-control" placeholder="Votre nom et prénom" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Adresse email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <label for="email">Adresse email *</label>
+                            <input type="email" id="email" class="form-control" placeholder="votre@email.com" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <input type="text" id="subject" class="form-control" required>
+                            <label for="subject">Sujet du message *</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Objet de votre demande" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <label for="message">Votre message *</label>
+                            <textarea id="message" class="form-control" placeholder="Décrivez votre projet, vos besoins et vos attentes..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn">Envoyer le message</button>
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1290,40 +1359,53 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
-                    <a href="#" class="footer-logo">JM<span>.</span></a>
-                    <p>Informaticien spécialisé en cybersécurité, développement web et design graphique. Motivé, rigoureux et en constante montée en compétences.</p>
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-palette"></i> Alex<span>Martin</span>
+                    </a>
+                    <p>Infographe et développeur passionné, je crée des expériences digitales mémorables qui marient esthétique raffinée et performance technique. 8 ans d'expérience dans le secteur digital.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/nemesis1empire" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/24162127708" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-links">
                     <h3>Navigation</h3>
                     <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#competences">Compétences</a></li>
-                        <li><a href="#portfolio">Projets Web</a></li>
-                        <li><a href="#design">Design Graphique</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Accueil</a></li>
+                        <li><a href="#competences"><i class="fas fa-chevron-right"></i> Compétences</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-links">
-                    <h3>Projets</h3>
+                    <h3>Services</h3>
                     <ul>
-                        <li><a href="https://muyambili.vercel.app/" target="_blank">Muyambili - Lecture</a></li>
-                        <li><a href="https://eliteprestation.vercel.app/" target="_blank">Elite Prestation</a></li>
-                        <li><a href="https://nemesis1empire.github.io/FinanceElite/" target="_blank">Finance Elite</a></li>
-                        <li><a href="https://nemesis1empire.github.io/JeremieMABAYI" target="_blank">Portfolio GitHub</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Design graphique</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Développement web</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Animation & motion design</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Branding & identité visuelle</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Ressources</h3>
+                    <ul>
+                        <li><a href="#" data-pdf="cv"><i class="fas fa-chevron-right"></i> Télécharger mon CV</a></li>
+                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Voir mon portfolio</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Blog & articles</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tutoriels & ressources</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 Jérémie MABAYI. Tous droits réservés.</p>
+                <p>&copy; 2023 Alex Martin - Portfolio Infographe Développeur. Tous droits réservés. | Conçu avec <i class="fas fa-heart" style="color: var(--secondary);"></i></p>
             </div>
         </div>
     </footer>
@@ -1335,8 +1417,9 @@
         
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
-            mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
         });
         
         // Fermer le menu mobile lors du clic sur un lien
@@ -1359,6 +1442,159 @@
             }
         });
         
+        // Filtrage du portfolio
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Retirer la classe active de tous les boutons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Ajouter la classe active au bouton cliqué
+                button.classList.add('active');
+                
+                const filterValue = button.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Système de prévisualisation d'images
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeImage = document.getElementById('closeImage');
+        const prevImage = document.getElementById('prevImage');
+        const nextImage = document.getElementById('nextImage');
+        
+        let currentImageIndex = 0;
+        let images = [];
+        
+        // Récupérer toutes les images du portfolio
+        document.querySelectorAll('.portfolio-img').forEach((imgContainer, index) => {
+            const imgSrc = imgContainer.getAttribute('data-image');
+            images.push(imgSrc);
+            
+            // Ajouter l'événement de clic pour chaque bouton d'aperçu
+            imgContainer.querySelector('[data-image-preview]').addEventListener('click', () => {
+                currentImageIndex = index;
+                modalImage.src = imgSrc;
+                imageModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Fermer la modal d'image
+        closeImage.addEventListener('click', () => {
+            imageModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Navigation entre les images
+        prevImage.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            modalImage.src = images[currentImageIndex];
+        });
+        
+        nextImage.addEventListener('click', () => {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            modalImage.src = images[currentImageIndex];
+        });
+        
+        // Fermer la modal en cliquant en dehors de l'image
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Système de lecteur PDF
+        const pdfModal = document.getElementById('pdfModal');
+        const pdfFrame = document.getElementById('pdfFrame');
+        const pdfTitle = document.getElementById('pdfTitle');
+        const pdfDescription = document.getElementById('pdfDescription');
+        const closePdf = document.getElementById('closePdf');
+        
+        // Définir les PDF pour chaque projet (remplacez par vos vrais fichiers PDF)
+        const pdfFiles = {
+            'project1': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'project2': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'project3': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'project4': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'project5': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'project6': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+            'cv': 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+        };
+        
+        const pdfTitles = {
+            'project1': 'Identité Visuelle Startup Tech - Dossier complet',
+            'project2': 'Plateforme E-commerce Luxe - Documentation technique',
+            'project3': 'Animation 3D Produit High-tech - Storyboard',
+            'project4': 'Dashboard Analytics - Spécifications techniques',
+            'project5': 'UI/UX Application Santé - Wireframes et prototypes',
+            'project6': 'Motion Design Service Financier - Storyboard',
+            'cv': 'CV - Alex Martin - Infographe Développeur'
+        };
+        
+        const pdfDescriptions = {
+            'project1': 'Dossier complet du projet d\'identité visuelle, incluant les concepts créatifs, palettes de couleurs, typographies et applications diverses.',
+            'project2': 'Documentation technique et fonctionnelle de la plateforme e-commerce, avec spécifications et architecture technique détaillée.',
+            'project3': 'Storyboard détaillé et présentation du projet d\'animation 3D, incluant les étapes de production et rendus finaux.',
+            'project4': 'Cahier des charges et documentation technique de l\'application de visualisation de données en temps réel.',
+            'project5': 'Wireframes, prototypes interactifs et spécifications UX/UI complètes de l\'application mobile de santé.',
+            'project6': 'Storyboard, planning de production et détails créatifs de la vidéo motion design explicative pour service financier.',
+            'cv': 'Curriculum Vitae complet d\'Alex Martin avec expériences professionnelles, compétences techniques et projets réalisés.'
+        };
+        
+        // Ouvrir le lecteur PDF
+        document.querySelectorAll('[data-pdf]').forEach(button => {
+            button.addEventListener('click', () => {
+                const pdfId = button.getAttribute('data-pdf');
+                
+                if (pdfFiles[pdfId]) {
+                    pdfFrame.src = pdfFiles[pdfId];
+                    pdfTitle.textContent = pdfTitles[pdfId] || 'Détails du projet';
+                    pdfDescription.textContent = pdfDescriptions[pdfId] || 'Document PDF du projet. Vous pouvez naviguer, zoomer et télécharger le fichier.';
+                    
+                    pdfModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    alert('PDF non disponible pour le moment. Utilisez le formulaire de contact pour en savoir plus.');
+                }
+            });
+        });
+        
+        // Fermer le lecteur PDF
+        closePdf.addEventListener('click', () => {
+            pdfModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Arrêter le chargement du PDF
+            pdfFrame.src = '';
+        });
+        
+        // Fermer la modal PDF en cliquant en dehors
+        pdfModal.addEventListener('click', (e) => {
+            if (e.target === pdfModal) {
+                pdfModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                pdfFrame.src = '';
+            }
+        });
+        
         // Formulaire de contact
         const contactForm = document.getElementById('contactForm');
         
@@ -1371,18 +1607,28 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Ici, normalement, on enverrait les données à un serveur
-            // Pour cette démo, on simule simplement un envoi réussi
-            alert(`Merci ${name} ! Votre message a été envoyé avec succès. Je vous répondrai dès que possible.`);
+            // Simulation d'envoi
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
             
-            // Réinitialiser le formulaire
-            contactForm.reset();
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert(`Merci ${name} ! Votre message a été envoyé avec succès. Je vous répondrai à ${email} dans les plus brefs délais.`);
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+                
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
         
         // Animation au défilement
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
@@ -1395,21 +1641,20 @@
         }, observerOptions);
         
         // Observer les éléments à animer
-        document.querySelectorAll('.skill-category, .portfolio-item, .design-item, .contact-form').forEach(el => {
+        document.querySelectorAll('.skill-category, .portfolio-item, .contact-form, .contact-item').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
         
-        // Simulation de téléchargement pour les boutons de design
-        document.querySelectorAll('.design-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.querySelector('.fa-download')) {
-                    e.preventDefault();
-                    alert('Téléchargement simulé - En production, ce bouton permettrait de télécharger le fichier correspondant.');
-                }
-            });
+        // Ajouter un effet de parallaxe léger
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
         });
     </script>
 </body>
